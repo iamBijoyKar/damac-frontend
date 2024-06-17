@@ -1,12 +1,13 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
+import type { Metadata } from 'next';
+import './globals.css';
 
-const inter = Inter({ subsets: ["latin"] });
+//* Components Imports
+import Footer from '@/components/Footer';
 
+//* Metadata for the page
 export const metadata: Metadata = {
-  title: "Demac",
-  description: "Real-state website",
+  title: 'Demac',
+  description: 'Real-state website',
 };
 
 export default function RootLayout({
@@ -16,7 +17,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className="font-body">
+        <main className="">
+          {children}
+          <Footer />
+        </main>
+      </body>
     </html>
   );
 }
