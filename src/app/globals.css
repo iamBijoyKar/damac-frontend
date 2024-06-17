@@ -2,4 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-
+@layer base {
+  :root {
+    --primary: 0 53 123;
+    --secondary: 23 171 255;
+    --ternary: 244 249 255;
+    --body-text: 92 92 92;
+    --body-text-2: 252 252 252;
+    --footer-bg: 9 29 65;
+  }
+}
