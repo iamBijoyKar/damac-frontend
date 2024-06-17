@@ -11,7 +11,7 @@ const config: Config = {
       colors: {
         primary: 'rgb(var(--primary) / <alpha-value>)',
         secondary: 'rgb(var(--secondary) / <alpha-value>)',
-        tertiary: 'rgb(var(--tertiary) / <alpha-value>)',
+        ternary: 'rgb(var(--ternary) / <alpha-value>)',
         bodyText: 'rgb(var(--body-text) / <alpha-value>)',
         bodyText2: 'rgb(var(--body-text-2) / <alpha-value>)',
         footerBg: 'rgb(var(--footer-bg) / <alpha-value>)',
