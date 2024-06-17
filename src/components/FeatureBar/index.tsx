@@ -12,7 +12,7 @@ import feat4Icon from '@/assets/feat4.svg';
 export default function FeatureBar() {
   return (
     <section className="w-full py-6 px-6 md:px-0 md:w-[90%] lg:w-[930px] xl:w-[1180px] 2xl:w-[1400px] h-full">
-      <ul className="flex justify-between gap-3 ">
+      <ul className="flex justify-around gap-3 ">
         <li className="hidden md:block">
           <FeatureBlock
             keyText="BOOK WITH"
