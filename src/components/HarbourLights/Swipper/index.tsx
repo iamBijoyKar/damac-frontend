@@ -17,21 +17,18 @@ import LightBox from '../LightBox';
 type SwipperProps = {
   imgs: string[] | StaticImageData[];
   labels?: string[];
+  lightBoxImages: string[];
 };
 
-export default function Swipper({ imgs, labels = [] }: SwipperProps) {
+export default function Swipper({
+  imgs,
+  labels = [],
+  lightBoxImages,
+}: SwipperProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [currentImg, setCurrentImg] = useState(imgs[0]);
   const [doubleClick, setDoubleClick] = useState(false);
   const [openLightBox, setOpenLightBox] = useState(false);
-
-  const exteriorLightBoxImages = [
-    '/interior-img1.jpeg',
-    '/interior-img2.jpeg',
-    '/interior-img3.jpeg',
-    '/interior-img4.jpeg',
-    '/interior-img5.jpeg',
-  ];
 
   //* Function to handle the double click
   const onDoubleClick = () => {
@@ -51,7 +48,7 @@ export default function Swipper({ imgs, labels = [] }: SwipperProps) {
   //* useEffect to update the current image when the currentIndex changes
   useEffect(() => {
     setCurrentImg(imgs[currentIndex]);
-  }, [currentIndex]);
+  }, [currentIndex, imgs]);
 
   useEffect(() => {
     if (!openLightBox) {
@@ -123,7 +120,7 @@ export default function Swipper({ imgs, labels = [] }: SwipperProps) {
         <LightBox
           open={openLightBox}
           setOpen={setOpenLightBox}
-          slides={exteriorLightBoxImages.map((img) => ({ src: img }))}
+          slides={lightBoxImages.map((img) => ({ src: img }))}
         />
       </div>
     </div>
