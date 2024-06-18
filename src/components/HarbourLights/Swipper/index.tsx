@@ -12,6 +12,7 @@ import type { StaticImageData } from 'next/image';
 //* Component Imports
 import SwipperCard from './Card';
 import Button from '../Button';
+import LightBox from '../LightBox';
 
 type SwipperProps = {
   imgs: string[] | StaticImageData[];
@@ -22,6 +23,15 @@ export default function Swipper({ imgs, labels = [] }: SwipperProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [currentImg, setCurrentImg] = useState(imgs[0]);
   const [doubleClick, setDoubleClick] = useState(false);
+  const [openLightBox, setOpenLightBox] = useState(false);
+
+  const exteriorLightBoxImages = [
+    '/interior-img1.jpeg',
+    '/interior-img2.jpeg',
+    '/interior-img3.jpeg',
+    '/interior-img4.jpeg',
+    '/interior-img5.jpeg',
+  ];
 
   //* Function to handle the double click
   const onDoubleClick = () => {
@@ -42,6 +52,12 @@ export default function Swipper({ imgs, labels = [] }: SwipperProps) {
   useEffect(() => {
     setCurrentImg(imgs[currentIndex]);
   }, [currentIndex]);
+
+  useEffect(() => {
+    if (!openLightBox) {
+      setDoubleClick(false);
+    }
+  }, [openLightBox]);
 
   return (
     <div className="w-full">
@@ -68,7 +84,11 @@ export default function Swipper({ imgs, labels = [] }: SwipperProps) {
                   Want to view in a Light Box ?
                 </p>
                 <div className="flex gap-3 justify-center">
-                  <Button label="Yes" type="primary" onClick={() => {}} />
+                  <Button
+                    label="Yes"
+                    type="primary"
+                    onClick={() => setOpenLightBox(true)}
+                  />
                   <Button
                     label="No"
                     type="secondary"
@@ -98,6 +118,13 @@ export default function Swipper({ imgs, labels = [] }: SwipperProps) {
             onClick={() => setCurrentImg(img)}
           />
         ))}
+      </div>
+      <div className="">
+        <LightBox
+          open={openLightBox}
+          setOpen={setOpenLightBox}
+          slides={exteriorLightBoxImages.map((img) => ({ src: img }))}
+        />
       </div>
     </div>
   );
