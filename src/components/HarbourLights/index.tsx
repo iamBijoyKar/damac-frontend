@@ -28,7 +28,7 @@ export default function HarboutLights() {
           />
         </div>
         <div className="mt-4 w-full sm:w-[500px] md:w-[600px] flex flex-col items-center">
-          <h1 className="font-display text-primary text-[30px] md:text-[36px] font-bold uppercase mt-2">
+          <h1 className="font-display text-primary text-[24px] sm:text-[30px] md:text-[36px] font-bold uppercase mt-2">
             Features & Amenities
           </h1>
           <p className="text-bodyText text-sm text-center mt-4">

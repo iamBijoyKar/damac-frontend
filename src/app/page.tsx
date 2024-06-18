@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <div className="">
       {/* Hero Section */}
-      <div className="relative w-full h-[100dvh] overflow-hidden">
+      <div className="relative w-full h-[100vh] max-[380px]:h-[130vh] sm:h-[100vh] overflow-hidden">
         <Image
           src={heroBg}
           alt="hero background"
@@ -27,11 +27,9 @@ export default function Home() {
       </div>
       {/* Hero Section End */}
       {/* Feature Bar Start*/}
-      <div className="flex justify-center">
-        {/* Ternary Background Color #F4F9FF  */}
-        <div className="w-full h-full bg-ternary flex justify-center">
-          <FeatureBar />
-        </div>
+      {/* Ternary Background Color #F4F9FF  */}
+      <div className="w-full h-full bg-ternary flex justify-center">
+        <FeatureBar />
       </div>
       {/* Feature Bar End */}
       {/* Harbour Lights Start */}
