@@ -84,14 +84,24 @@ export default function Gallary() {
           <Swipper
             imgs={exteriorsImgs}
             lightBoxImages={exteriorLightBoxImages}
-            labels={['Pool', 'Bathroom', 'Rooms', 'Gyms']}
+            labels={[
+              'Outdoor Pool Side',
+              'Luxury Bathroom',
+              'Indoor Pool Side',
+              'Recetion Area',
+            ]}
           />
         ) : (
           // Interiors Swipper
           <Swipper
             imgs={interiorsImgs}
             lightBoxImages={interiorLightBoxImages}
-            labels={['Pool', 'Bathroom', 'Rooms', 'Gyms']}
+            labels={[
+              'Classic Interior',
+              'Sea Facing Room',
+              'Spacious Living Room',
+              'Modern Interior',
+            ]}
           />
         )}
       </div>

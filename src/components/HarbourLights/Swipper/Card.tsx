@@ -23,7 +23,7 @@ export default function SwipperCard({
       className="w-full aspect-video relative cursor-pointer rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out group"
     >
       <div className="w-full h-full flex justify-center items-center text-center absolute top-0 left-0  z-20 bg-transparent group-hover:bg-slate-100/20">
-        <p className="text-primary text-sm font-semibold hidden group-hover:block transition-all duration-300 ease-in-out">
+        <p className="text-primary text-[10px] sm:text-sm font-semibold hidden group-hover:block transition-all duration-300 ease-in-out">
           {label}
         </p>
       </div>
