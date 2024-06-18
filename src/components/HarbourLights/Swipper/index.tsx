@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { RxChevronLeft } from 'react-icons/rx';
 import { RxCaretRight } from 'react-icons/rx';
+import { MdAdsClick } from 'react-icons/md';
 
 //* Import Types
 import type { StaticImageData } from 'next/image';
@@ -58,11 +59,18 @@ export default function Swipper({
 
   return (
     <div className="w-full">
-      <div className="w-full aspect-video md:aspect-[4/2] relative rounded-lg overflow-hidden">
+      <div className="w-full aspect-video md:aspect-[4/2] relative rounded-lg overflow-hidden group">
         <div className={`w-full h-full relative ${doubleClick ? 'blur' : ''} `}>
           <Image src={currentImg} alt="Swipper Image" fill />
         </div>
+        <div className="absolute top-1 left-0 hidden group-hover:flex transition-all duration-200 ease-in-out p-1 items-center gap-1">
+          <MdAdsClick className="text-white text-xl" />
+          <p className="text-white text-sm font-semibold">
+            Double Click in the middle to view in Light Box
+          </p>
+        </div>
         <div className="w-full h-full px-2 flex justify-between items-center absolute top-0 left-0">
+          {/* Left Button for Swipper */}
           <button
             onClick={onLeftClick}
             type="button"
@@ -77,7 +85,7 @@ export default function Swipper({
           >
             {doubleClick ? (
               <div className="text-center select-none">
-                <p className="text-lg font-semibold mb-4">
+                <p className="text-lg font-semibold mb-4 text-white">
                   Want to view in a Light Box ?
                 </p>
                 <div className="flex gap-3 justify-center">
@@ -97,6 +105,7 @@ export default function Swipper({
               </div>
             ) : null}
           </div>
+          {/* Right Button for Swipper */}
           <button
             onClick={onRightClick}
             type="button"
