@@ -1,15 +1,25 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import brandLogo from '@/assets/brand-logo.svg';
-import menuIcon from '@/assets/menu.svg';
-//! This is the exported svg icon from Figma
-//! I use ReactIcons for the icons,but
-//! There was not many places to icons, so I just used the exported icon
+import { MdMenu } from 'react-icons/md';
+import { MdClose } from 'react-icons/md';
+
+import SmNav from './SmNav';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  useEffect(() => {
+    //? Disable scrolling when the menu is open
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+  }, [isMenuOpen]);
+
   return (
     <header className="mt-8">
       <div className="flex justify-between items-center">
@@ -22,7 +32,16 @@ export default function Header() {
           </button>
         </div>
         <div className="sm:hidden">
-          <Image src={menuIcon} alt="menu icon" width={30} height={30} />
+          {isMenuOpen ? (
+            <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
+              <MdClose size={24} />
+            </button>
+          ) : (
+            <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
+              <MdMenu size={24} />
+            </button>
+          )}
+          {isMenuOpen ? <SmNav /> : null}
         </div>
       </div>
     </header>
