@@ -4,13 +4,14 @@ import Image from 'next/image';
 //* Component Imports
 import FeatureBar from '@/components/FeatureBar';
 import Hero from '@/components/Hero/';
+import HarbourLights from '@/components/HarbourLights';
 
 //* Assets Imports
 import heroBg from '@/assets/hero-bg.jpeg';
 
 export default function Home() {
   return (
-    <div className="h-[200vh] ">
+    <div className="">
       {/* Hero Section */}
       <div className="relative w-full h-[100dvh] overflow-hidden">
         <Image
@@ -25,12 +26,19 @@ export default function Home() {
         </div>
       </div>
       {/* Hero Section End */}
+      {/* Feature Bar Start*/}
       <div className="flex justify-center">
         {/* Ternary Background Color #F4F9FF  */}
         <div className="w-full h-full bg-ternary flex justify-center">
           <FeatureBar />
         </div>
       </div>
+      {/* Feature Bar End */}
+      {/* Harbour Lights Start */}
+      <div className="flex justify-center">
+        <HarbourLights />
+      </div>
+      {/* Harbour Lights End */}
     </div>
   );
 }
