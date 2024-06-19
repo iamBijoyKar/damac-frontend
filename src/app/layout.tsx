@@ -6,7 +6,7 @@ import Footer from '@/components/Footer';
 
 //* Metadata for the page
 export const metadata: Metadata = {
-  title: 'Demac',
+  title: 'Damac',
   description: 'Real-state website',
 };
 
