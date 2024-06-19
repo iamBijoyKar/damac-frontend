@@ -1,7 +1,8 @@
 'use client';
+
+//* Library Imports
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaHome } from 'react-icons/fa';
 import { IoSearch } from 'react-icons/io5';
 import { FaDollarSign } from 'react-icons/fa';
 import { BsBank2 } from 'react-icons/bs';
